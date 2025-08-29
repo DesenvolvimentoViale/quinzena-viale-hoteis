@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-ar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viale Hotéis - Quinzena do Cliente</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script id="script-infochat" src='https://cdn.asksuite.com/infochat.js?dataConfig=https://control.asksuite.com/api/companies/rede-viale'></script>
+    </head>
+
+<body>
+    <header class="hero-section">
+        <nav class="navbar" id="mainNavbar">
+            <a href="#" class="logo">
+                <img src="logoquinzena/quinzena.svg" alt="Viale Hotéis Logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="https://wa.me/554521057299?text=Ol%C3%A1%2C%20vim%20da%20p%C3%A1gina%20de%20pacotes%20do%20Viale.%20Quero%20mais%20informa%C3%A7%C3%B5es.">CONTATO/SAC</a></li>
+                <li><a href="#">EXPERIÊNCIAS</a></li>
+            </ul>
+        </nav>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 id="heroTitle">Quinzena do Cliente</h1>
+            <p class="subtitle">De 01 a 15 de setembro, descontos de 15% a 25% para suas reservas online!</p>
+            <div id="booking-widget-container">
+                <p class="form-intro-text-new">Em nossa rede, sua estadia perfeita está a um clique de distância</p>
+                <form class="booking-form-new" id="mainBookingForm">
+                    <div class="form-field-new" id="field-destination">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="field-text" id="text-destination">
+                            <span class="placeholder">Qual o seu destino?</span>
+                        </div>
+                        <div class="booking-popup" id="popup-destination">
+                            <div class="popup-header">
+                                <span>Selecione o destino</span>
+                                <button type="button" class="popup-close-btn">×</button>
+                            </div>
+                            <div class="destination-city-header">Foz do Iguaçu, PR</div>
+                            <div class="destination-option" data-value="DoubleTree by Hilton Foz">
+                                <i class="fas fa-star destination-icon"></i>
+                                <span>DoubleTree by Hilton Foz</span>
+                            </div>
+                            <div class="destination-option" data-value="Viale Tower">
+                                <i class="fas fa-building destination-icon"></i>
+                                <span>Viale Tower</span>
+                            </div>
+                            <div class="destination-option" data-value="Viale Cataratas">
+                                <i class="fas fa-water destination-icon"></i>
+                                <span>Viale Cataratas</span>
+                            </div>
+                            <div class="destination-option" data-value="Viale Iguassu">
+                                <i class="fas fa-hotel destination-icon"></i>
+                                <span>Viale Iguassu</span>
+                            </div>
+                            <div class="destination-city-header">Londrina, PR</div>
+                                <div class="destination-option" data-value="JK Premium">
+                                <i class="fas fa-gem destination-icon"></i>
+                                <span>JK Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-field-new" id="field-period">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="field-text" id="text-period">
+                            <span class="placeholder">Qual período?</span>
+                        </div>
+                    </div>
+                    <div class="form-field-new" id="field-people">
+                        <i class="fas fa-user-friends"></i>
+                        <div class="field-text" id="text-people">
+                            <span class="placeholder">Quantas pessoas?</span>
+                        </div>
+                        <div class="booking-popup" id="popup-people">
+                            <div class="popup-header">
+                                <span>Hóspedes</span>
+                                <button type="button" class="popup-close-btn">×</button>
+                            </div>
+                            <div class="pax-control">
+                                <div class="pax-line">
+                                    <div class="pax-label">
+                                        <span>Adultos</span>
+                                        <span class="pax-age">13 anos ou mais</span>
+                                    </div>
+                                    <div class="pax-counter">
+                                        <button type="button" class="pax-btn" data-type="adults" data-action="minus">-</button>
+                                        <span class="pax-value" id="adults-value">2</span>
+                                        <button type="button" class="pax-btn" data-type="adults" data-action="plus">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pax-control">
+                                <div class="pax-line">
+                                    <div class="pax-label">
+                                        <span>Crianças</span>
+                                        <span class="pax-age">0 a 12 anos</span>
+                                    </div>
+                                    <div class="pax-counter">
+                                        <button type="button" class="pax-btn" data-type="children" data-action="minus">-</button>
+                                        <span class="pax-value" id="children-value">0</span>
+                                        <button type="button" class="pax-btn" data-type="children" data-action="plus">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="booking-submit-new">BUSCAR <i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hotel-intro-block">
+            <div class="container">
+                <div class="intro-container">
+                    <div class="intro-main-content">
+                        <h4>Rede</h4>
+                        <h1>Viale Hotéis</h1>
+                        <div class="info-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>O HOTEL QUE COMBINA COM O SEU DESTINO!</span>
+                        </div>
+                        <p class="intro-description">
+                            Em Foz do Iguaçu e Londrina, sua próxima estadia será simplesmente incrível. Contamos com uma estrutura completa para proporcionar conforto e atendimento de qualidade.
+                        </p>
+                    </div>
+                    <div class="intro-sidebar">
+                        <div class="promo-box">
+                            <h5><i class="fas fa-percent"></i> Quinzena do Cliente</h5>
+                            <p>
+                                Aproveite a Quinzena do Cliente! De 01 a 15 de setembro, garanta de <span class="highlight">15% a 25% de desconto</span> em reservas online para se hospedar até 2026.
+                                <br><small>*Válido conforme a disponibilidade.</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    <nav class="secondary-nav">
+                        <ul class="secondary-nav-links">
+                            <li><a href="#hotels">Hotéis</a></li>
+                            <li><a href="#photos-carousel">Fotos</a></li>
+                            <li><a href="#testimonials">Avaliações</a></li>
+                        </ul>
+                        <a href="#booking-widget-container" class="secondary-reserve-btn">
+                                BUSCAR RESERVAS <i class="fas fa-search"></i>
+                            </a>
+                    </nav>
+            </div>
+        </section>
+
+        <section id="hotels" class="hotel-promo-section">
+            <h2 class="section-title">Nossas Ofertas Especiais</h2>
+            <p class="section-subtitle">Selecione sua cidade e aproveite os descontos exclusivos da Quinzena do Cliente.</p>
+            
+            <div class="container">
+                <div class="city-section">
+                    <h2 class="city-title">Foz do Iguaçu</h2>
+                    <div class="hotel-grid-flex">
+                        <div class="hotel-card">
+                            <div class="hotel-card-bg-image" style="background-image: url('https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/Prancheta_4.jpg');"></div>
+                            <div class="hotel-card-overlay-content"><h3>DoubleTree by Hilton</h3><div class="hotel-info"><i class="fas fa-star"></i> <span>Perfil Sofisticado</span></div></div>
+                            <div class="hotel-card-hover-content"><h4>Luxo e Exclusividade</h4><ul class="hotel-details-pills"><li><i class="fas fa-spa"></i>SPA Completo</li><li><i class="fas fa-utensils"></i>Gastronomia Refinada</li><li><i class="fas fa-concierge-bell"></i>Serviço de Alto Padrão</li></ul><button class="btn-reserve" data-hotel="DoubleTree by Hilton Foz">Reserve com 25% OFF</button></div>
+                        </div>
+                        <div class="hotel-card">
+                            <div class="hotel-card-bg-image" style="background-image: url('https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/Prancheta_3.jpg');"></div>
+                            <div class="hotel-card-overlay-content"><h3>Viale Cataratas</h3><div class="hotel-info"><i class="fas fa-users"></i> <span>Perfil Familiar</span></div></div>
+                            <div class="hotel-card-hover-content"><h4>Perfeito para a Família</h4><ul class="hotel-details-pills"><li><i class="fas fa-child"></i>Ampla Área de Lazer</li><li><i class="fa-solid fa-water-ladder"></i>Piscina Climatizada</li><li><i class="fas fa-parking"></i>Estacionamento Amplo</li></ul><button class="btn-reserve" data-hotel="Viale Cataratas">Reserve com 15% OFF</button></div>
+                        </div>
+                        <div class="hotel-card">
+                            <div class="hotel-card-bg-image" style="background-image: url('https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/Prancheta_1.jpg');"></div>
+                            <div class="hotel-card-overlay-content"><h3>Viale Tower</h3><div class="hotel-info"><i class="fas fa-briefcase"></i> <span>Perfil Executivo</span></div></div>
+                            <div class="hotel-card-hover-content"><h4>Moderno e Central</h4><ul class="hotel-details-pills"><li><i class="fas fa-water"></i>Piscina no Rooftop</li><li><i class="fas fa-map-marker-alt"></i>Localização Privilegiada</li><li><i class="fas fa-glass-cheers"></i>Bar com Vista</li></ul><button class="btn-reserve" data-hotel="Viale Tower">Reserve com 15% OFF</button></div>
+                        </div>
+                        <div class="hotel-card">
+                            <div class="hotel-card-bg-image" style="background-image: url('https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/Prancheta_2.jpg');"></div>
+                            <div class="hotel-card-overlay-content"><h3>Viale Iguassu</h3><div class="hotel-info"><i class="fas fa-dollar-sign"></i> <span>Perfil Econômico</span></div></div>
+                            <div class="hotel-card-hover-content"><h4>Inteligente e Prático</h4><ul class="hotel-details-pills"><li><i class="fas fa-check-circle"></i>Custo-Benefício</li><li><i class="fas fa-bus"></i>Fácil Acesso a Passeios</li><li><i class="fas fa-wifi"></i>Conforto Essencial</li></ul><button class="btn-reserve" data-hotel="Viale Iguassu">Reserve com 15% OFF</button></div>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/d/embed?mid=1MkVNsotZ0b7xmudkh5LmoDXMDg8ZSFQ&ehbc=2E312F&noprof=1"></iframe>
+                    </div>
+                </div>
+
+                <div class="city-section">
+                    <h2 class="city-title">Londrina</h2>
+                    <div class="londrina-layout-grid">
+                    
+                        <div class="hotel-card">
+                            <div class="hotel-card-bg-image" style="background-image: url('https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg');"></div>
+                            <div class="hotel-card-overlay-content"><h3>JK Premium</h3><div class="hotel-info"><i class="fas fa-briefcase"></i> <span>Perfil Executivo</span></div></div>
+                            <div class="hotel-card-hover-content"><h4>Conforto e Negócios</h4><ul class="hotel-details-pills"><li><i class="fas fa-wifi"></i>Wi-Fi de Alta Velocidade</li><li><i class="fas fa-users-cog"></i>Espaço para Eventos</li><li><i class="fas fa-map-marked-alt"></i>Localização Estratégica</li></ul><button class="btn-reserve" data-hotel="JK Premium">Reserve com 25% OFF</button></div>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1fNrvSlX19chR0xq4prTn_QvC3yBwR-U&ehbc=2E312F&noprof=1"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="newsletter-section-dual">
+            <div class="container-dual">
+                <div class="newsletter-content-left">
+                    <h2 class="section-title-dual">Fique por dentro das novidades</h2>
+                    <p class="section-subtitle-dual">
+                        Cadastre-se para receber as melhores ofertas, dicas de passeios e
+                        novidades exclusivas da Viale Hotéis e do Compras Paraguai
+                        diretamente no seu e-mail.
+                    </p>
+        
+                    <form id="promo-newsletter-form" class="newsletter-form-dual" method="POST" action="#">
+                        <div class="form-group-dual">
+                            <label for="form-name-dual">Nome</label>
+                            <input type="text" id="form-name-dual" name="name" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group-dual">
+                            <label for="form-lastname-dual">Sobrenome</label>
+                            <input type="text" id="form-lastname-dual" name="lastname" placeholder="Seu sobrenome" required>
+                        </div>
+                        <div class="form-group-dual">
+                            <label for="form-email-dual">Email</label>
+                            <input type="email" id="form-email-dual" name="mail" placeholder="SEUNOME@GMAIL.COM" required>
+                        </div>
+                        <div class="form-group-dual">
+                            <label for="form-phone-dual">Celular</label>
+                            <input type="tel" id="form-phone-dual" name="phone" placeholder="+55 (00) 0 0000-0000">
+                        </div>
+                        <button type="submit" class="cta-button-dual">ENVIAR</button>
+                    </form>
+                    
+                    <script type="text/javascript">
+                        var __ss_noform = __ss_noform || [];
+                        __ss_noform.push(['baseURI', 'https://app-3SMTDNLIFO.marketingautomation.services/webforms/receivePostback/MzY0NjA0MjIyAQA/']);
+                        __ss_noform.push(['endpoint', 'b0dee906-d5c0-4557-9ba1-eb63cf8949e2']);
+                    </script>
+                    <script type="text/javascript" src="https://koi-3SMTDNLIFO.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+                </div>
+                <div class="newsletter-image-right" style="background-image: url('img/dt.jpg');">
+                    </div>
+            </div>
+        </section>
+
+        <section id="photos-carousel" class="carousel-section">
+            <div class="container">
+                <h2>Estrutura e atendimento no padrão Viale</h2>
+                <p class="carousel-subtitle">Conheça a estrutura dos Viale Hotéis</p>
+            </div>
+            <div class="image-carousel">
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/1-1024x683.jpg" alt="Estrutura DoubleTree"><div class="slide-overlay"><h3>DoubleTree By Hilton Foz</h3></div></div>
+                        <div class="carousel-slide"><img src="https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/1-1024x683__1_.jpg" alt="Restaurante Viale Cataratas"><div class="slide-overlay"><h3>Viale Cataratas</h3></div></div>
+                        <div class="carousel-slide"><img src="https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/vistaaereaSkybar.vialetower-5464x3640.jpg" alt="Rooftop Viale Tower"><div class="slide-overlay"><h3>Viale Tower</h3></div></div>
+                        <div class="carousel-slide"><img src="https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/_MG_5719-6240x4160.jpg" alt="Quarto Viale Iguassu"><div class="slide-overlay"><h3>Viale Iguassu</h3></div></div>
+                        <div class="carousel-slide"><img src="https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/3-1024x683__1_.jpg" alt="Bar Viale Cataratas"><div class="slide-overlay"><h3>Viale Cataratas</h3></div></div>
+                        <div class="carousel-slide"><img src="https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/DSC04745__Custom_-3928x2209.jpg" alt="Piscina Viale Tower"><div class="slide-overlay"><h3>Viale Tower</h3></div></div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="prevBtn" aria-label="Anterior">←</button>
+                    <button class="carousel-btn" id="nextBtn" aria-label="Próximo">→</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="container">
+            <div class="services-section-wrapper">
+                <h2>Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-column"><h3>Bem-estar</h3><ul><li><i class="fas fa-dumbbell"></i> Academia</li><li><i class="fas fa-gamepad"></i> Sala de Jogos</li><li><i class="fa-solid fa-spa"></i> SPA Essence</li></ul></div>
+                    <div class="service-column"><h3>Áreas Comuns</h3><ul><li><i class="fas fa-parking"></i><div class="service-item-text"><span>Estacionamento</span> <span style="font-size: 0.8rem;">Consulte condições</span></div></li><li><i class="fa-solid fa-fan"></i> Jardim de Inverno</li><li><i class="fa-solid fa-water-ladder"></i> Piscina Climatizada</li></ul></div>
+                    <div class="service-column"><h3>Gastronomia</h3><ul><li><i class="fas fa-utensils"></i> Restaurante</li><li><i class="fas fa-concierge-bell"></i> Room Service</li><li><i class="fas fa-coffee"></i> Café da Manhã</li></ul></div>
+                    <div class="service-column"><h3>WhatsApp</h3><ul><li><i class="fa-brands fa-whatsapp"></i><div class="service-item-text"><span>Rede Viale Hotéis</span> <span style="font-size: 0.8rem;">Saiba mais sobre os hotéis!</span></div></li></ul><a href="https://wa.me/554521057299?text=Ol%C3%A1%2C%20vim%20da%20p%C3%A1gina%20da%20Quinzena%20do%20Cliente.%20Quero%20mais%20informa%C3%A7%C3%B5es." class="btn-outline">Confira aqui</a></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gastronomy" class="gastronomy-section">
+            <div class="gastronomy-grid">
+                <div class="gastronomy-image-wrapper"><img src="https://ss-usa.s3.amazonaws.com/companies/MzY0NjA0MjIyAQA/uploads/F_rias_de_Julho/002-1600x1080.jpg" alt="Buffet variado"></div>
+                <div class="gastronomy-content"><div class="icon"><i class="fas fa-concierge-bell"></i></div><h2>Gastronomia</h2><h3>CUIDADO EM TODOS OS DETALHES</h3><p>Oferecemos opções para todos os gostos, desde um café da manhã completo para começar o dia com energia até almoço e jantar com pratos variados.</p><div class="options-pills"><div class="pill-item"><i class="fas fa-long-arrow-alt-right"></i> Opções vegetarianas</div><div class="pill-item"><i class="fas fa-long-arrow-alt-right"></i> Opções sem glúten</div></div><p class="disclaimer">*Para garantir que possamos atender às suas necessidades dietéticas, é crucial fazer a solicitação de pratos específicos com antecedência para o hotel.</p></div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section-dark">
+            <div class="testimonials-header-dark"><h2>O que dizem os clientes <strong style="color: white;">Viale</strong></h2><div class="ratings-summary" style="color: white; font-size: 0.9rem;"><span><i class="fas fa-star"></i> 5.0 (2090 comentários)</span> | <span class="sources">Avaliações: Tripadvisor, Google, Omnibees</span></div></div>
+            <div class="testimonial-slider-viewport">
+                <div class="testimonial-slider-track">
+                    <article class="testimonial-card-dark"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Avaliação muito positiva! Atendimento excelente, com recepcionistas e garçons atenciosos. Quartos amplos, confortáveis e limpos. Café da manhã e jantar variados e de ótima qualidade."</p><a href="#" target="_blank">Depoimento Tripadvisor Viale Cataratas</a></article>
+                    <article class="testimonial-card-dark"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Simplesmente espetacular! O maître Anderson é espetacular! Já viajei muito e o atendimento dele está entre os melhores que já tive. Parabéns ao Viale por ter um profissional desse nível!"</p><a href="#" target="_blank">Depoimento TripAdvisor Viale Tower</a></article>
+                    <article class="testimonial-card-dark"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Hotel bem localizado, em frente ao shopping Cataratas, com fácil acesso a refeições e compras. Atendimento excelente, café da manhã bom e quarto arejado. Valeu muito a pena!"</p><a href="#" target="_blank">Depoimento TripAdvisor Viale Iguassu</a></article>
+                </div>
+            </div>
+            <div class="testimonial-slider-nav">
+                <button class="slider-arrow" id="testimonial-prev">←</button>
+                <button class="slider-arrow" id="testimonial-next">→</button>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-column"><h5>Links Úteis</h5><ul><li><a href="#">Sobre Nós</a></li><li><a href="#">Contato</a></li><li><a href="#">Reservas</a></li></ul></div>
+            <div class="footer-column"><h5>Carreiras</h5><ul><li><a href="#">Blog</a></li><li><a href="#">Imprensa</a></li><li><a href="#">Parcerias</a></li></ul></div>
+            <div class="footer-column"><h5>Recursos</h5><ul><li><a href="#">Eventos</a></li><li><a href="#">Comunidade</a></li><li><a href="#">Mídia Social</a></li></ul></div>
+        </div>
+        <hr class="footer-separator">
+        <div class="footer-bottom">
+            <div class="footer-brand">VIALE <span>HOTÉIS</span></div>
+            <div class="footer-social-icons"><a href="https://wa.me/554521057299" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/vialecataratashotel/?locale=pt_BR" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/viale.cataratas/" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@viale.cataratas" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a></div>
+        </div>
+        <hr class="footer-separator">
+        <div class="footer-copyright"><div class="footer-copyright-text">© 2025 Viale Hotéis. Todos os direitos reservados.</div></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
