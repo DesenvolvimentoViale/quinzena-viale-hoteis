@@ -206,46 +206,76 @@
         </section>
         
         <section class="newsletter-section-dual">
-            <div class="container-dual">
-                <div class="newsletter-content-left">
-                    <h2 class="section-title-dual">Fique por dentro das novidades</h2>
-                    <p class="section-subtitle-dual">
-                        Cadastre-se para receber as melhores ofertas, dicas de passeios e
-                        novidades exclusivas da Viale Hotéis e do Compras Paraguai
-                        diretamente no seu e-mail.
-                    </p>
-        
-                    <form id="promo-newsletter-form" class="newsletter-form-dual" method="POST" action="#">
-                        <div class="form-group-dual">
-                            <label for="form-name-dual">Nome</label>
-                            <input type="text" id="form-name-dual" name="name" placeholder="Seu nome" required>
-                        </div>
-                        <div class="form-group-dual">
-                            <label for="form-lastname-dual">Sobrenome</label>
-                            <input type="text" id="form-lastname-dual" name="lastname" placeholder="Seu sobrenome" required>
-                        </div>
-                        <div class="form-group-dual">
-                            <label for="form-email-dual">Email</label>
-                            <input type="email" id="form-email-dual" name="mail" placeholder="SEUNOME@GMAIL.COM" required>
-                        </div>
-                        <div class="form-group-dual">
-                            <label for="form-phone-dual">Celular</label>
-                            <input type="tel" id="form-phone-dual" name="phone" placeholder="+55 (00) 0 0000-0000">
-                        </div>
-                        <button type="submit" class="cta-button-dual">ENVIAR</button>
-                    </form>
-                    
-                    <script type="text/javascript">
-                        var __ss_noform = __ss_noform || [];
-                        __ss_noform.push(['baseURI', 'https://app-3SMTDNLIFO.marketingautomation.services/webforms/receivePostback/MzY0NjA0MjIyAQA/']);
-                        __ss_noform.push(['endpoint', 'b0dee906-d5c0-4557-9ba1-eb63cf8949e2']);
-                    </script>
-                    <script type="text/javascript" src="https://koi-3SMTDNLIFO.marketingautomation.services/client/noform.js?ver=1.24" ></script>
-                </div>
-                <div class="newsletter-image-right" style="background-image: url('img/dt.jpg');">
+    <div class="container-dual">
+        <div class="newsletter-content-left">
+
+            <div id="newsletter-form-container">
+                <h2 class="section-title-dual">Fique por dentro das novidades</h2>
+                <p class="section-subtitle-dual">
+                    Cadastre-se para receber as melhores ofertas, dicas de passeios e
+                    novidades exclusivas da Viale Hotéis e do Compras Paraguai
+                    diretamente no seu e-mail.
+                </p>
+
+                <form id="promo-newsletter-form" class="newsletter-form-dual" method="POST" action="#">
+                    <div class="form-group-dual">
+                        <label for="form-name-dual">Nome</label>
+                        <input type="text" id="form-name-dual" name="firstname" placeholder="Seu nome" required>
                     </div>
+                    <div class="form-group-dual">
+                        <label for="form-lastname-dual">Sobrenome</label>
+                        <input type="text" id="form-lastname-dual" name="lastname" placeholder="Seu sobrenome" required>
+                    </div>
+                    <div class="form-group-dual">
+                        <label for="form-email-dual">Email</label>
+                        <input type="email" id="form-email-dual" name="email" placeholder="SEUNOME@GMAIL.COM" required>
+                    </div>
+                    <div class="form-group-dual">
+                        <label for="form-phone-dual">Celular</label>
+                        <input type="tel" id="form-phone-dual" name="phone" placeholder="+55 (00) 0 0000-0000">
+                    </div>
+                    <button type="submit" class="cta-button-dual">ENVIAR</button>
+                </form>
             </div>
-        </section>
+
+            <div id="newsletter-success-message" style="display: none; text-align: center; padding: 40px 0;">
+                <h2 class="section-title-dual">Obrigado!</h2>
+                <p class="section-subtitle-dual">Seu cadastro foi realizado com sucesso. Em breve você receberá nossas novidades.</p>
+            </div>
+
+            <script type="text/javascript">
+                var __ss_noform = __ss_noform || [];
+                __ss_noform.push(['baseURI', 'https://app-3SMTDNLIFO.marketingautomation.services/webforms/receivePostback/MzY0NjA0MjIyAQA/']);
+                __ss_noform.push(['endpoint', 'b0dee906-d5c0-4557-9ba1-eb63cf8949e2']);
+                __ss_noform.push(['form', 'promo-newsletter-form']);
+            </script>
+            <script type="text/javascript" src="https://koi-3SMTDNLIFO.marketingautomation.services/client/noform.js?ver=1.24"></script>
+            
+            <script type="text/javascript">
+                document.addEventListener('DOMContentLoaded', function() {
+                    const form = document.getElementById('promo-newsletter-form');
+                    const formContainer = document.getElementById('newsletter-form-container');
+                    const successMessage = document.getElementById('newsletter-success-message');
+
+                    form.addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        if (form.checkValidity()) {
+                            setTimeout(function() {
+                                formContainer.style.display = 'none';
+                                successMessage.style.display = 'block';
+                            }, 500);
+                        } else {
+                           form.reportValidity();
+                        }
+                    });
+                });
+            </script>
+
+        </div>
+        <div class="newsletter-image-right" style="background-image: url('img/dt.jpg');">
+        </div>
+    </div>
+</section>
 
         <section id="photos-carousel" class="carousel-section">
             <div class="container">
@@ -324,6 +354,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
